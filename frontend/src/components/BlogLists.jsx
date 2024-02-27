@@ -13,7 +13,7 @@ const BlogLists = () => {
     fetchBlogs();
   }, []);
   return (
-    <div className="container mx-auto p-2 space-y-2">
+    <div className="container mx-auto p-2 p-2 space-y-2">
       {blogs.map((blog) => (
         <Blogs key={blog.id} blog={blog} />
       ))}
