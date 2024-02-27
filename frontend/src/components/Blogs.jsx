@@ -1,6 +1,14 @@
+import { useState } from "react";
+import {
+  FaComment,
+  FaShare,
+  FaShareFromSquare,
+  FaThumbsUp,
+} from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Blogs = ({ blog }) => {
+  const [liked, setLiked] = useState(false);
   return (
     <>
       <div className="rounded-lg border bg-white shadow-md">
@@ -35,14 +43,22 @@ const Blogs = ({ blog }) => {
           <span>No shares</span>
         </div>
         <div className="mx-5 grid grid-cols-3 border-t py-1 text-neutral-600">
-          <button>
-            <span className="text-lg font-semibold">Like</span>
+          <button
+            className={`${liked && "text-blue-600"} text-lg font-semibold btn gap-2`}
+            onClick={() => {
+              setLiked(!liked);
+            }}
+          >
+            <FaThumbsUp />
+            Like
           </button>
-          <button>
-            <span className="text-lg font-semibold">Comment</span>
+          <button className="text-lg font-semibold btn gap-2">
+            <FaComment />
+            Comment
           </button>
-          <button>
-            <span className="text-lg font-semibold">Share</span>
+          <button className="text-lg font-semibold btn gap-2">
+            <FaShareFromSquare />
+            Share
           </button>
         </div>
       </div>
