@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 
-// import { FaUserGroup } from "react-icons/fa6";
 const NavLink = ({ icon, to = "/" }) => {
   return (
-    <Link to={to} className="flex justify-center items-center text-2xl">
+    <Link to={to} className={`text-2xl btn`}>
       {icon}
     </Link>
   );

@@ -79,3 +79,7 @@ li {
 .btn-float {
   @apply btn rounded-full;
 }
+
+a.active {
+  @apply relative before:absolute before:bg-blue-800 before:w-full before:h-1 before:bottom-0;
+}
